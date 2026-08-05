@@ -1,0 +1,6 @@
+generated/
+generated_images/
+upload/
+.npm-cache/
+.git/
+*.log

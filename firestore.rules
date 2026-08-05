@@ -1,0 +1,22 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function isAdmin() {
+      return request.auth != null
+        && request.auth.token.email == 'admin@lunaraboutique.com';
+    }
+
+    match /products/{document=**} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+    match /categories/{document=**} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+    match /brands/{document=**} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+  }
+}

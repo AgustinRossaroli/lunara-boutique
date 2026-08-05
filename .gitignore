@@ -1,0 +1,14 @@
+node_modules/
+.next/
+out/
+next-env.d.ts
+.vercel/
+.env*
+!.env.example
+generated/
+generated_images/
+upload/
+.npm-cache/
+*.log
+.DS_Store
+coverage/
